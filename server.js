@@ -45,7 +45,7 @@ var initiateURL = "https://api.ciscospark.com/v1/authorize?"
     + "&state=" + state;
 var read = require("fs").readFileSync;
 var join = require("path").join;
-var str = read(join(__dirname, '/www/index.ejs'), 'utf8');
+var str = read(join(__dirname, '/togofurther/list-rooms.ejs'), 'utf8');
 var ejs = require("ejs");
 var compiled = ejs.compile(str)({ "link": initiateURL }); // inject the link into the template
 app.get("/index.html", function (req, res) {
